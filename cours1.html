@@ -20,8 +20,12 @@
 	<ol>
 		<li>Créer le dossier <span class="fichier">projetlaravel</span></li>
 		<li>Ouvrir le dossier dans le <cite class="app">Terminal</cite></li>
-		<li>Exécuter <span class="commande copiable">composer create-project laravel/laravel .</span></li>
-		<li>Exécuter ls et regarder le contenu du dossier dans le <cite class="app">Finder</cite>.</li>
+		<li>
+        <p>Exécuter <div class="commande copiable">composer create-project --prefer-dist laravel/laravel . "5.5.*"</div></p>
+			<p>Rappel pour les labs macs : La commande <code>composer</code> n'est pas disponible directement. On a mis le fichier <code>composer.phar</code> dans le dossier <code>étudiant</code>.</p>
+			<div class="commande copiable">php ~/composer.phar ...</div>
+        </li>
+		<li>Exécuter <span class="commande">ls</span> et regarder le contenu du dossier dans le <cite class="app">Finder</cite>.</li>
 		<li>Exécuter <span class="commande copiable">php artisan serve</span></li>
 		<li>Ouvrir le site dans <cite class="app">Chrome</cite></li>
 		<li>Ouvrir le dossier dans <cite class="app">Brackets</cite></li>
