@@ -18,15 +18,19 @@
 <li value="27" id="installer_form" data-video="7EEGVGmQlew">
 	<h2>Installation du plugin</h2>
 	<ol>
-		<li><p>Le point de départ de ce tutoriel peut être récupéré avec <a href="https://github.com/web3cstj/projetlaravel_videos.git">git</a> à la branche <code>laravel02.5</code>. Le résultat est à la branche <code>laravel03</code></p></li>
-		<li>Faire la recherche <span class="string">Form Laravel</span> dans Google.</li>
-		<li>Suivre le lien vers <cite>Laravel Collective</cite> (le 2e).</li>
-		<li>Suivre les instructions <b>de la version 5.4</b> sauf la première étape.</li>
+		<li>
+			<p>Le point de départ de ce tutoriel peut être récupéré avec <a href="https://github.com/web3cstj/projetlaravel_videos.git">git</a> à la branche <code>laravel02.5</code>.</p>
+			<p>Le résultat est à la branche <code>laravel03</code>.</p>
+			<p>Ne pas oublier de faire l'installation de la Bd avec l'adresse <code class="string">/installer</code>.</p>
+		</li>
+		<li><del>Faire la recherche <span class="string">Form Laravel</span> dans Google.</del></li>
+		<li><del>Suivre le lien vers <cite>Laravel Collective</cite> (le 2e).</del></li>
+		<li><del>Suivre les instructions <b>de la version 5.4</b> sauf la première étape.</del></li>
 		<li>Ouvrir le fichier <span class="fichier">/composer.json</span></li>
 		<li>Ajouter dans la section <code>'require'</code> la ligne suivante (avec la virgule) :
 			<div class="bloccode php copiable">
 				<div><samp>"laravel/tinker": "~1.0"</samp>,</div>
-				<div>"laravelcollective/html":"^5.4.0"</div>
+				<div>"laravelcollective/html":"^5.5.0"</div>
 			</div>
 		</li>
 		<li>Dans le terminal faire <code class="commande copiable">composer update</code>.</li>
@@ -74,8 +78,8 @@
 <li id="view_form" data-video="BRYrug1Aclg">
 	<h2>Le formulaire vide</h2>
 	<ol>
-		<li>Dans le controller, ajouter l'appel à la <cite>view</cite> <span class="view">users.create</span>.</li>
-		<li>Créer un user vide et créer l'envoyer avec la view.</li>
+		<li>Dans l'action <code>create</code> du <span class="controller">UserController</span>, ajouter l'appel à la <cite>view</cite> <span class="view">users.create</span>.</li>
+		<li>Créer un user vide et l'envoyer avec la view.</li>
 		<li>Ajouter une valeur à la propriété <var>province</var>.
 			<div class="bloccode php copiable">
 				<div><samp>public function create()</samp></div>
@@ -179,8 +183,8 @@
 	<h2>La réception des données</h2>
 	<ol>
 		<li>Tester la page et constater l'erreur. Il manque la route pour l'action <span class="controller">UserController@store</span>.</li>
-		<li>Dupliquer la route pour <span class="controller">UserController@create</span> et mettre <span class="controller">store</span></li>
-		<li>Remplacer <span class="php">get</span> pour <span class="php">post</span> afin que la route réagisse lorsque des données sont envoyées. Ne pas changer l'adresse de la route. <span class="php copiable">Route::post('/users/create', "UserController@store");</span></li>
+		<li>Dupliquer la route pour <span class="controller">UserController@create</span> et changer pour <span class="controller">@store</span>.</li>
+		<li>Dans la nouvelle route, remplacer <span class="php">get</span> pour <span class="php">post</span> afin que la route réagisse lorsque des données sont envoyées. Ne pas changer l'adresse de la route. <span class="php copiable">Route::post('/users/create', "UserController@store");</span></li>
 		<li>Dans l'action <span class="controller">UserController@store</span>, constater la variable <var class="php">$request</var>. Faire retourner cette variable.</li>
 		<li>Faire <code class="php copiable">return $request-&gt;get('nom');</code></li>
 		<li>Créer un nouveau <code>user</code>, y mettre le nom et le retourner.
